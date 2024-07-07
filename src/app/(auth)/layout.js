@@ -6,8 +6,8 @@ export default function AuthLayout({ children }) {
           <div className="container mx-auto flex justify-center items-center h-full">
              <Image 
                src={'/logo.png'}
-               width={150}
-               height={70}
+               width={200}
+               height={90}
                alt='logo'
              />
           </div>
