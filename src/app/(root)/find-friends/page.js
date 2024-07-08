@@ -20,7 +20,7 @@ const FindFriends = () => {
 
   useEffect(()=>{
     fetchAllUser()
-  },[user])
+  })
 
   const handleAddFriend = async(friendId)=>{
     const response = await handleAddRemoveFriends(friendId)
@@ -36,7 +36,7 @@ const FindFriends = () => {
           {
               allUser.map((user,index)=>{
                 return(
-                  <div className='bg-white p-4 flex justify-center flex-col items-center gap-1 min-w-[180px] min-h-[180px]'>
+                  <div key={index} className='bg-white p-4 flex justify-center flex-col items-center gap-1 min-w-[180px] min-h-[180px]'>
                       <Avatar
                         userId={user?._id}
                         imageURL={user?.profile_pic}

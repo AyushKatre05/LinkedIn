@@ -34,7 +34,7 @@ const UserProfileDetails = ({ params }) => {
 
     useEffect(()=>{
       fetchUserDetails()
-    },[])
+    })
 
     const isDisplayAddFriend = user?.friends?.includes(data?._id) || user?._id === data?._id
   return (
