@@ -1,7 +1,14 @@
+import Header from "@/components/Header";
+import { Provider } from "@/providers/provider";
+
 export default function RootLayout({ children }) {
     return (
-      <div>
-        {children}
-      </div>
+      <main>
+        <Provider>
+            <Header/>
+            { children}
+        </Provider>
+      </main>
     );
   }
+  
