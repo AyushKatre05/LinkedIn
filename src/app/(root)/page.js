@@ -9,6 +9,7 @@ import Avatar from "@/components/Avatar";
 import Divider from "@/components/Divider";
 import handleAddRemoveFriends from "@/helpers/handleAddRemoveFriends";
 import toast from 'react-hot-toast'
+import News from "@/components/News";
 
 export default function Home() {
   const {user, fetchCurrentUserDetails} = useContext(ContextData)
@@ -50,33 +51,8 @@ export default function Home() {
             occupation={user?.occupation || ''}
             friends = {user?.friends || []}
           />
-        </section>
-
-
-        {/*** upload post and see post*/}
-        <section className="rounded mt-5 lg:mt-0">
-            <UploadPost
-               _id={user?._id}
-               profile_pic={user?.profile_pic}
-               callApi={fetchPost}
-            />
-
-            <div>
-                {
-                  postData.map((post,index)=>{
-                    return(
-                      <PostDisplay data={post} key={post._id} handleAddFriend={handleAddFriend}/>
-                    )
-                  })
-                }
-            </div>
-
-        </section>
-
-
-         {/*** ads and friend list*/}
-         <section className="bg-white rounded p-4 lg:sticky lg:top-20">
-            <h1 className="font-bold mb-3">Friends List:</h1>
+          <hr className="m-3"/>
+          <h1 className="font-bold mb-3">Your Connections:</h1>
             <div>
               {
                 friendsList.map((friend,index)=>{
@@ -103,7 +79,35 @@ export default function Home() {
                 })
               }
             </div>
+        </section>
 
+
+        {/*** upload post and see post*/}
+        <section className="rounded mt-5 lg:mt-0">
+            <UploadPost
+               _id={user?._id}
+               profile_pic={user?.profile_pic}
+               callApi={fetchPost}
+            />
+
+            <div>
+                {
+                  postData.map((post,index)=>{
+                    return(
+                      <PostDisplay data={post} key={post._id} handleAddFriend={handleAddFriend}/>
+                    )
+                  })
+                }
+            </div>
+
+        </section>
+
+
+         {/*** ads and friend list*/}
+         <section className="bg-white rounded p-4 lg:sticky lg:top-20">
+            <div className="flex flex-row">
+            <News/>
+            </div>
         </section>
    </div>
   );

@@ -156,8 +156,8 @@ const PostDisplay = ({ data ,handleAddFriend }) => {
             {/**share */}
             <div>
                 <div className='flex items-center gap-1 cursor-pointer'>
-                        <Share/>
-                        <p>Share</p>  
+                <Share/>
+                <p>Share</p> 
                 </div>
             </div>
         </div>
