@@ -1,9 +1,9 @@
 import React from 'react'
 
-const page = () => {
+const Notification = () => {
   return (
-    <div>page</div>
+    <div>Notification</div>
   )
 }
 
-export default page
+export default Notification

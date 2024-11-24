@@ -41,7 +41,7 @@ const PostDisplay = ({ data ,handleAddFriend }) => {
         if(openComment){
             fetchCommentData()
         }
-    })
+    },[])
 
 
     const handleuploadComment = async() =>{

@@ -34,7 +34,7 @@ const UserProfileDetails = ({ params }) => {
 
     useEffect(()=>{
       fetchUserDetails()
-    })
+    },[])
 
     const isDisplayAddFriend = user?.friends?.includes(data?._id) || user?._id === data?._id
   return (
@@ -76,9 +76,6 @@ const UserProfileDetails = ({ params }) => {
                     }
                   </div> 
             </div>
-
-            {/**friends list */}
-            {/*** ads and friend list*/}
          <section className="bg-white rounded p-4 lg:sticky lg:top-20">
               
               <h1 className="font-bold mb-3">Friends List:</h1>

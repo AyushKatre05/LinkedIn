@@ -20,7 +20,7 @@ const FindFriends = () => {
 
   useEffect(()=>{
     fetchAllUser()
-  })
+  },[])
 
   const handleAddFriend = async(friendId)=>{
     const response = await handleAddRemoveFriends(friendId)
